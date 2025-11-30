@@ -493,6 +493,9 @@
         window.addEventListener('load', () => {
             loadStorage();
             populateSelect();
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('./sw.js');
+            }
             // preview
             updateExercisePreview();
         });
